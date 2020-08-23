@@ -4,7 +4,7 @@ export const LoginContext = createContext();
 
 const LoginProvider = (props) => {
 
-    const [usuario, setUsuario] = useState('')
+    const [usuario, setUsuario] = useState({});
 
     const [inputUsuario, setInputUsuario] = useState({
         username: '',
@@ -47,7 +47,6 @@ const LoginProvider = (props) => {
     },[inputUsuario]) //el useEffect ejecuta la función cada vez que se cambie los datos ingresados, como dependencia llamo a inputUsuario que contiene un objeto
     
     return (
-        //Aqui en el value llamo a los datos que compartire a mis componentes hijos
         <LoginContext.Provider value={{ usuario, setInputUsuario, setDisponible }}>
             {props.children}
         </LoginContext.Provider>
